@@ -1,0 +1,44 @@
+# Place this file in a seperate directory.
+# Configurations settings are made in "webserver.config.txt" prior to deployment.
+# Run, "docker-compose up" in the directory where this file resides to start the containers in the file.
+version: '2'
+services:
+# See the following location for specifics on how this container works: https://github.com/jwilder/nginx-proxy
+  nginx-proxy:
+    image: 'jwilder/nginx-proxy'
+    ports:
+      - '80:80'
+#      - '443:443'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+#     - ./nginx/certs:/etc/nginx/certs:ro
+      - ./nginx/vhost.d:/etc/nginx/vhost.d:ro 
+#     - ./nginx/html:/usr/share/nginx/html 
+#    labels:
+#      - 'com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true'
+    restart: unless-stopped
+    network_mode: "bridge"    
+
+# See the following location for specifics on how this container works:
+# https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion
+#  letsencrypt-nginx-proxy-companion:
+#    image: 'jrcs/letsencrypt-nginx-proxy-companion'
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock:ro
+#      - ./nginx/certs:/etc/nginx/certs:rw
+#      - ./nginx/vhost.d:/etc/nginx/vhost.d:rw
+#    volumes_from:
+#      - nginx-proxy
+#    restart: unless-stopped
+#    network_mode: "bridge"
+
+# This container is meant to serve as a test server to help the user configure their network to make containers
+# network accessible. Comment out or delete this container as required after testing is complete.    
+  docker-hello-world:
+    image: 'crccheck/hello-world'
+    environment:
+    - VIRTUAL_HOST=${TEST_SUBDOMAIN}.${NETWORK_DOMAIN_NAME}
+#    - LETSENCRYPT_HOST=${TEST_SUBDOMAIN}.${NETWORK_DOMAIN_NAME}
+#    - LETSENCRYPT_EMAIL=${ADMIN_EMAIL}
+    restart: unless-stopped
+    network_mode: "bridge"

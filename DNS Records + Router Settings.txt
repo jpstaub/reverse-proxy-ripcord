@@ -1,0 +1,11 @@
+Public DNS Records:
+Note!!! Change only yourDomain.com to your specific network-accessible domain name. 
+
+Record				Record Type                     IP Address
+yourDomain.com			A				IP address
+test.yourDomain.com		A				IP address
+
+Router Port Forwarding:
+Port 	        Local IP			        Protocol
+80		Docker host LAN IP address		TCP
+443		Docker host LAN IP address		TCP

@@ -1,0 +1,13 @@
+#######################
+# Mandatory variables #
+#######################
+
+# The network-accessible domain where your TEST server will be reached. In "www.example.com" the network-accessible domain would be "example.com".
+# In "awesome.local" the network-accessible domain would be "local"
+NETWORK_DOMAIN_NAME=
+# The network-accessible subdomain for the TEST server. In "www.example.com" the test subdomain would be "www". 
+# In "awesome.local" the network-accessible domain would be "awesome".
+TEST_SUBDOMAIN=
+# A known good e-mail address where you can be contacted. You must use a valid email address otherwise LetsEncrypt will not work and no SSL
+# certificate will be returned. 
+ADMIN_EMAIL=
