@@ -51,4 +51,19 @@ The first line above forms a [symlink](https://kb.iu.edu/d/abbe) so that the use
     $ docker-compose up -d
 9. Watch the logs with:
     $ docker-compose logs -f
+10. Browse to the test address entered in `webserver.conf`. The test page above proves a successful deployment.     
+10. Stop an instance with:
+    $ docker-compose stop
+11. Remove all containers associated with the instance with:
+    $ docker-compose down
+    
+# No Worky!
+An unsuccessful test is usually the result of network configuration problems. 
 
+1. Did you use the Docker host local IP address for local network configuration and your public IP address for public DNS configuration?
+
+2. For **Option 1** deployments: Can you successfully [ping](https://www.lifewire.com/ping-command-2618099) your test web server address that was set in `webserver.conf`? If you got a good ping check your router port forwarding. If the router port forwarding looks good double check that you disabled the firewall on the Docker host. If you did not get a good ping check your public DNS settings to include the IP address. If you have a dynamic IP address your need [forward IP address changes](https://freedns.afraid.org/guide/dd-wrt/) to your DNS provider.
+
+3. For **Option 2** deployments: Can you [ping](https://www.lifewire.com/ping-command-2618099) your local IP address using the test web server address that was set in `webserver.conf`? If not, you may need to [change your DNS server](https://www.lifewire.com/how-to-change-dns-servers-in-windows-7-2626271) your computer is using. This presumes that you have already correctly set up a local DNS server on your network. 
+
+4. And so much more. Networking can be a bitch. Remember the fundamentals and use simple tools like ping to narrow down where the problem lies.
