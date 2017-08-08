@@ -40,7 +40,7 @@ The first line above forms a [symlink](https://kb.iu.edu/d/abbe) so that the use
 1. [Clone](https://help.github.com/articles/cloning-a-repository/) this repository onto a server.
 2. Decide which option is appropriate for your use case. **Option 1** is meant for **WEB** deployment where there is a need to provide secure communication between clients and servers with SSL. However, it also maintains the ability to serve http traffic depending on the configuration of containers added to the Docker host. **Option 2** is meant for **LAN** deployment where there is NO need to provide secure communications between clients and servers with SSL. Both **Option 1** and **Option 2** are configured with a test web server that will display the following image if deployed successfully. 
 
-![test web page](./test_web_page.PNG)
+![test web page](./docs/test_web_page.PNG)
 
 3. Make the appropriate `symlink` according to the option chosen.
 4. Make the appropriate entires in `webserver.config`.
