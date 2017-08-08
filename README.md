@@ -4,10 +4,15 @@ However, it can be used on its own to set up a reverse-proxy environment for oth
 
 # Prerequisite knowledge base:
 [Docker Command Line](https://docs.docker.com/engine/reference/commandline/cli/)
+
 [Docker Compose Command Line](https://docs.docker.com/compose/reference/)
+
 [Server Side Firewall](https://help.ubuntu.com/community/UFW)
+
 [Public DNS Configuration](http://freedns.afraid.org/) -- for **Option 1 below**
+
 [Local DNS Configuration](https://superuser.com/questions/45789/running-dns-locally-for-home-network) -- for **Option 2 below**
+
 [Router Configuration](https://www.dd-wrt.com/wiki/index.php/Tutorials) -- specifically port forwarding
 
 ## Option 1 - Reverse Proxy with SSL support:
