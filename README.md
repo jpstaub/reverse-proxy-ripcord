@@ -49,14 +49,21 @@ The first line above forms a [symlink](https://kb.iu.edu/d/abbe) so that the use
 6. [Forward ports](https://www.dd-wrt.com/wiki/index.php/Tutorials) 80 (http) and 443 (https) if deploying via **Option 1** to allow web access.
 7. Disable any server side firewalls for testing.
 8. Start an instance with:
-    $ docker-compose up -d
+
+    ```$ docker-compose up -d```
+    
 9. Watch the logs with:
-    $ docker-compose logs -f
+
+    ```$ docker-compose logs -f```
+    
 10. With clean logs, browse to the test address entered in `webserver.conf`. The test page above proves a successful deployment.     
 11. Stop an instance with:
-    $ docker-compose stop
+
+    ```$ docker-compose stop```
+    
 12. Remove all containers associated with the instance with:
-    $ docker-compose down
+
+    ```$ docker-compose down```
     
 # No Worky!
 An unsuccessful test is usually the result of network configuration problems. 
