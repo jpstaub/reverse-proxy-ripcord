@@ -2,7 +2,7 @@
 This repository is meant as a companion repository to [kobo-docker-ripcord](https://github.com/jpstaub/kobo-docker-ripcord).
 However, it can be used on its own to set up a reverse-proxy environment for other docker containers. The docker-compose files are structured to provide **WEB** (https) or **LAN** (http) network connectivity to services running in docker containers. `reverse-proxy-ripcord` can be used in the following ways with little in the way of configuration on the part of the end user.
 
-**Note: Command line instructions must be executed inside the reverse-proxy-ripcord directory**
+**Note: Command line instructions must be executed inside the `reverse-proxy-ripcord` directory.**
 
 # Prerequisite knowledge base:
 [Docker Command Line](https://docs.docker.com/engine/reference/commandline/cli/)
