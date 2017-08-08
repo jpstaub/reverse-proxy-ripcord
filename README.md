@@ -17,6 +17,16 @@ However, it can be used on its own to set up a reverse-proxy environment for oth
 
 [Router Configuration](https://www.dd-wrt.com/wiki/index.php/Tutorials) -- specifically port forwarding
 
+[ping](https://www.lifewire.com/ping-command-2618099) -- a method to test network connectivity 
+
+[nslookup](https://www.lifewire.com/what-is-nslookup-817516) -- a method to test DNS resolution
+
+[ipconfig](https://www.lifewire.com/what-is-nslookup-817516) -- a method to see the ipconfig of a given computer
+
+[DNS settings Windows](https://www.windowscentral.com/how-change-your-pcs-dns-settings-windows-10)
+
+[DNS settings Mac](http://osxdaily.com/2015/12/05/change-dns-server-settings-mac-os-x/)
+
 ## Option 1 - Reverse Proxy with SSL support:
 This repository can be used as a stand alone repository to set up a [jwilder reverse proxy](https://github.com/jwilder/nginx-proxy) server with [companion SSL](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) support. This option would be taken by doing something like the following at the command line:
 ```
