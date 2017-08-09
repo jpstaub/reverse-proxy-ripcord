@@ -59,7 +59,7 @@ The first line above forms a [symlink](https://kb.iu.edu/d/abbe) so that the use
 
 An example DNS setup from [FreeDNS.afraid.org](http://freedns.afraid.org/) is shown below.
 
-![dns records](./docs/dns_records)
+![dns records](./docs/dns_records.PNG)
 
 6. `ping` the test address that was set in [`webserver.config`](./webserver.config.txt). Adjust DNS settings until a successful `ping` response is returned. See below for what a successful ping from a command line looks like.
 
@@ -69,7 +69,7 @@ An example DNS setup from [FreeDNS.afraid.org](http://freedns.afraid.org/) is sh
 
 An example [port forwarding](https://www.dd-wrt.com/wiki/index.php/Port_Forwarding) setup from an ASUS router is shown below.
 
-![router config](./docs/router_config)
+![router config](./docs/router_config.PNG)
 
 8. Disable any server side [firewalls](https://help.ubuntu.com/community/UFW) for testing.
 9. Start an instance with:
