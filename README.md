@@ -57,7 +57,7 @@ The first line above forms a [symlink](https://kb.iu.edu/d/abbe) so that the use
 4. Make the appropriate entires in `webserver.config`.
 5. Make the appropriate entires in your local or public DNS system. See `DNS Records + Router Settings` for guidance on settings.
 6. `ping` the test address that was set in `webserver.config`. Adjust DNS settings until a successful `ping` response is returned.
-7. [Forward ports](https://www.dd-wrt.com/wiki/index.php/Tutorials) 80 (http) and 443 (https) if deploying via **Option 1** to allow web access.
+7. [Forward ports](https://www.dd-wrt.com/wiki/index.php/Tutorials) 80 (http) and 443 (https) if deploying via **Option 1** to allow web access. Ports should be forwarded to the IP address of the Docker host on which the instance of `reverse-proxy-ripcord` is deployed.
 8. Disable any server side firewalls for testing.
 9. Start an instance with:
 
