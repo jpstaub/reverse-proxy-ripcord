@@ -55,7 +55,7 @@ The first line above forms a [symlink](https://kb.iu.edu/d/abbe) so that the use
 
 3. Make the appropriate `symlink` according to the option chosen.
 4. Make the appropriate entires in [`webserver.config`](./webserver.config.txt).
-5. Make the appropriate entires in your local or public DNS system. See [`DNS Records + Router Settings`](./docs/DNS Records + Router Settings.txt) for guidance on settings.
+5. Make the appropriate entires in your local or public DNS system. See [`DNS Records + Router Settings`](./docs/DNS_Records_+_Router_Settings.txt") for guidance on settings.
 6. `ping` the test address that was set in [`webserver.config`](./webserver.config.txt). Adjust DNS settings until a successful `ping` response is returned. See below for what a successful ping from a command line looks like.
 
 ![good ping](./docs/good_ping_check.PNG)
