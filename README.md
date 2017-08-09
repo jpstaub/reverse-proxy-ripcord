@@ -56,11 +56,21 @@ The first line above forms a [symlink](https://kb.iu.edu/d/abbe) so that the use
 3. Make the appropriate `symlink` according to the option chosen.
 4. Make the appropriate entires in [`webserver.config`](./webserver.config.txt).
 5. Make the appropriate entires in your local or public DNS system. See [`DNS Records + Router Settings`](./docs/DNS_Records_+_Router_Settings.txt") for guidance on settings.
+
+An example DNS setup from [FreeDNS.afraid.org](http://freedns.afraid.org/) is shown below.
+
+![dns records](./docs/dns_records)
+
 6. `ping` the test address that was set in [`webserver.config`](./webserver.config.txt). Adjust DNS settings until a successful `ping` response is returned. See below for what a successful ping from a command line looks like.
 
 ![good ping](./docs/good_ping_check.PNG)
 
-7. [Forward ports](https://www.dd-wrt.com/wiki/index.php/Tutorials) 80 (http) and 443 (https) if deploying via **Option 1** to allow web access. Ports should be forwarded to the **IP address** of the **Docker host** on which the **instance of `reverse-proxy-ripcord` is deployed**.
+7. [Forward ports](https://www.dd-wrt.com/wiki/index.php/Tutorials) 80 (http) and 443 (https) if deploying via **Option 1** to allow web access. Ports should be forwarded to the **IP address** of the **Docker host** on which the **instance of `reverse-proxy-ripcord` is deployed**. See [`DNS Records + Router Settings`](./docs/DNS_Records_+_Router_Settings.txt") for guidance on settings.
+
+An example [port forwarding](https://www.dd-wrt.com/wiki/index.php/Port_Forwarding) setup from an ASUS router is shown below.
+
+![router config](./docs/router_config)
+
 8. Disable any server side [firewalls](https://help.ubuntu.com/community/UFW) for testing.
 9. Start an instance with:
 
@@ -90,6 +100,6 @@ An unsuccessful test is usually the result of network configuration problems.
 
 If you got a good ping check your router port forwarding. If the router port forwarding looks good double check that you disabled the firewall on the Docker host. If you did not get a good ping check your public DNS settings to include the IP address. If you have a dynamic IP address your need to [forward IP address changes](https://freedns.afraid.org/guide/dd-wrt/) to your DNS provider to ensure long term connectivity.
 
-3. For **Option 2** deployments: Can you [ping](https://www.lifewire.com/ping-command-2618099) your local IP address using the test web server address that was set in `webserver.conf`? If not, you may need to [change your DNS server](https://www.lifewire.com/how-to-change-dns-servers-in-windows-7-2626271) your computer is using. This presumes that you have already correctly set up a local DNS server on your network. 
+3. For **Option 2** deployments: Can you [ping](https://www.lifewire.com/ping-command-2618099) your local IP address using the test web server address that was set in `webserver.conf`? If not, you may need to [change the DNS server](https://www.lifewire.com/how-to-change-dns-servers-in-windows-7-2626271) your computer is using. This presumes that you have already correctly set up a local DNS server on your network. 
 
 4. And so much more. Networking can be a grinding challenge. Remember the fundamentals and use simple tools like ping to narrow down where the problem lies.
