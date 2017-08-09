@@ -98,7 +98,11 @@ An unsuccessful test is usually the result of network configuration problems.
 
 ![bad ping](./docs/bad_ping_check.PNG)
 
-If you got a good ping check your router port forwarding. If the router port forwarding looks good double check that you disabled the firewall on the Docker host. If you did not get a good ping check your public DNS settings to include the IP address. If you have a dynamic IP address your need to [forward IP address changes](https://freedns.afraid.org/guide/dd-wrt/) to your DNS provider to ensure long term connectivity.
+If you got a good ping check your router port forwarding. An example of the logs output for bad port forwarding is included below.
+
+[bad router configuration](./docs/bad_router_config.PNG)
+
+If the router port forwarding looks good double check that you disabled the firewall on the Docker host. If you did not get a good ping check your public DNS settings to include the IP address. If you have a dynamic IP address your need to [forward IP address changes](https://freedns.afraid.org/guide/dd-wrt/) to your DNS provider to ensure long term connectivity.
 
 3. For **Option 2** deployments: Can you [ping](https://www.lifewire.com/ping-command-2618099) your local IP address using the test web server address that was set in `webserver.conf`? If not, you may need to [change the DNS server](https://www.lifewire.com/how-to-change-dns-servers-in-windows-7-2626271) your computer is using. This presumes that you have already correctly set up a local DNS server on your network. 
 
