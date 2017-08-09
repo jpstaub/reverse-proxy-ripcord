@@ -54,11 +54,14 @@ The first line above forms a [symlink](https://kb.iu.edu/d/abbe) so that the use
 ![test web page](./docs/test_web_page.PNG)
 
 3. Make the appropriate `symlink` according to the option chosen.
-4. Make the appropriate entires in `webserver.config`.
-5. Make the appropriate entires in your local or public DNS system. See `DNS Records + Router Settings` for guidance on settings.
-6. `ping` the test address that was set in `webserver.config`. Adjust DNS settings until a successful `ping` response is returned.
-7. [Forward ports](https://www.dd-wrt.com/wiki/index.php/Tutorials) 80 (http) and 443 (https) if deploying via **Option 1** to allow web access. Ports should be forwarded to the IP address of the Docker host on which the instance of `reverse-proxy-ripcord` is deployed.
-8. Disable any server side firewalls for testing.
+4. Make the appropriate entires in [`webserver.config`](./webserver.config.txt).
+5. Make the appropriate entires in your local or public DNS system. See [`DNS Records + Router Settings`](./docs/DNS Records + Router Settings.txt) for guidance on settings.
+6. `ping` the test address that was set in [`webserver.config`](./webserver.config.txt). Adjust DNS settings until a successful `ping` response is returned. See below for what a successful ping from a command line looks like.
+
+![good ping](./docs/good_ping_check.PNG)
+
+7. [Forward ports](https://www.dd-wrt.com/wiki/index.php/Tutorials) 80 (http) and 443 (https) if deploying via **Option 1** to allow web access. Ports should be forwarded to the **IP address** of the **Docker host** on which the **instance of `reverse-proxy-ripcord` is deployed**.
+8. Disable any server side [firewalls](https://help.ubuntu.com/community/UFW) for testing.
 9. Start an instance with:
 
     ```$ docker-compose up -d```
@@ -67,7 +70,7 @@ The first line above forms a [symlink](https://kb.iu.edu/d/abbe) so that the use
 
     ```$ docker-compose logs -f```
     
-11. With clean logs, browse to the test address entered in `webserver.conf`. The test page above proves a successful deployment.     
+11. With clean logs, browse to the test address entered in `webserver.conf`. The test page included above proves a successful deployment.     
 12. Stop an instance with:
 
     ```$ docker-compose stop```
@@ -79,9 +82,13 @@ The first line above forms a [symlink](https://kb.iu.edu/d/abbe) so that the use
 # No Worky!
 An unsuccessful test is usually the result of network configuration problems. 
 
-1. Did you use the Docker host local IP address for local network configuration and your public IP address for public DNS configuration?
+1. Did you use the **Docker host local IP address** for **local network configuration** and your **public IP address** for **public DNS configuration**?
 
-2. For **Option 1** deployments: Can you successfully [ping](https://www.lifewire.com/ping-command-2618099) your test web server address that was set in `webserver.conf`? If you got a good ping check your router port forwarding. If the router port forwarding looks good double check that you disabled the firewall on the Docker host. If you did not get a good ping check your public DNS settings to include the IP address. If you have a dynamic IP address your need to [forward IP address changes](https://freedns.afraid.org/guide/dd-wrt/) to your DNS provider to ensure long term connectivity.
+2. For **Option 1** deployments: Can you successfully [ping](https://www.lifewire.com/ping-command-2618099) your test web server address that was set in `webserver.conf`? A representation of a good `ping` check is included above. A represenation of a bad `ping` check is included below.
+
+![bad ping](./docs/bad_ping_check.PNG)
+
+If you got a good ping check your router port forwarding. If the router port forwarding looks good double check that you disabled the firewall on the Docker host. If you did not get a good ping check your public DNS settings to include the IP address. If you have a dynamic IP address your need to [forward IP address changes](https://freedns.afraid.org/guide/dd-wrt/) to your DNS provider to ensure long term connectivity.
 
 3. For **Option 2** deployments: Can you [ping](https://www.lifewire.com/ping-command-2618099) your local IP address using the test web server address that was set in `webserver.conf`? If not, you may need to [change your DNS server](https://www.lifewire.com/how-to-change-dns-servers-in-windows-7-2626271) your computer is using. This presumes that you have already correctly set up a local DNS server on your network. 
 
