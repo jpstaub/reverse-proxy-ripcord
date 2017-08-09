@@ -27,6 +27,10 @@ However, it can be used on its own to set up a reverse-proxy environment for oth
 
 [DNS settings Mac](http://osxdaily.com/2015/12/05/change-dns-server-settings-mac-os-x/)
 
+Running the following command will give linux manual page specifics about a command that is giving you trouble:
+```
+$ man [command]
+```
 ## Option 1 - Reverse Proxy with SSL support:
 This repository can be used as a stand alone repository to set up a [jwilder reverse proxy](https://github.com/jwilder/nginx-proxy) server with [companion SSL](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) support. This option would be taken by doing something like the following at the command line:
 ```
