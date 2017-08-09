@@ -100,7 +100,7 @@ An unsuccessful test is usually the result of network configuration problems.
 
 If you got a good ping check your router port forwarding. An example of the logs output for bad port forwarding is included below.
 
-[bad router configuration](./docs/bad_router_config.PNG)
+[bad router configuration](./docs/bad_port_fwd.PNG)
 
 If the router port forwarding looks good double check that you disabled the firewall on the Docker host. If you did not get a good ping check your public DNS settings to include the IP address. If you have a dynamic IP address your need to [forward IP address changes](https://freedns.afraid.org/guide/dd-wrt/) to your DNS provider to ensure long term connectivity.
 
